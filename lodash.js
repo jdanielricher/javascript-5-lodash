@@ -282,11 +282,11 @@ const myEmployees = [
   }
 ];
 
-const myEmployeesAddresses = 0; // use map to get addresses here.
+const myEmployeesAddresses = myEmployees.map(address => address); // use map to get addresses here.
 
 // Now we want to use map to get an array of ages of the employees.
 
-const myEmployeesAges = 0; // use map to get ages here.
+const myEmployeesAges = myEmployees.map(ages => ages); // use map to get ages here.
 
 // union
 //  Union lets us take 2 arrays, and create a new array that only has 1 entry for
@@ -326,8 +326,8 @@ const breeFriendsEmails = [
   "dave@gmail.com"
 ];
 
-const listToSendEmailsTo = 0; // Put lodash here to make list of the union of the two address.
-
+const listToSendEmailsTo = _.intersection(A = [6, 3, 8, 4], B = [1, 2, 3, 4], C = _.intersection(A, B)); // Put lodash here to make list of the union of the two address.
+C = [3, 4];
 // intersection
 //  Intersection lets us take two arrays, and create a new array that only
 //  contains shared elements.
@@ -339,7 +339,7 @@ const listToSendEmailsTo = 0; // Put lodash here to make list of the union of th
 // Bob and Bree have decided that instead of inviting everyone they know to their
 // party. They are instead only going to invite those people that they both know.
 
-const listOfSharedEmails = 0; // Use lodash to create the list that are in both lists
+const listOfSharedEmails = _.groupBy(["betty.white@gmail.com"], ["mr.giggles@gmail.com"], ["mrs.giggles@gmail.com"]); // Use lodash to create the list that are in both lists
 
 // groupBy
 //  Group By lets us take an array of objects, and group then into groups based
@@ -459,7 +459,7 @@ let fastFibonnaci = 0; // use memoize to create a fast fibonnaci.  Use the same
 
 // Here we have a regular axios call to a server.
 
-let getDeathstar = function(n) {
+let getDeathstar = function (n) {
   return axios.get("https://swapi.co/api/starships/" + n);
 };
 
