@@ -282,11 +282,11 @@ const myEmployees = [
   }
 ];
 
-const myEmployeesAddresses = myEmployees.map(address => address); // use map to get addresses here.
+const myEmployeesAddresses = _.map(myEmployees, "address"); // use map to get addresses here.
 
 // Now we want to use map to get an array of ages of the employees.
 
-const myEmployeesAges = myEmployees.map(ages => ages); // use map to get ages here.
+const myEmployeesAges = _.map(myEmployees, "age"); // use map to get ages here.
 
 // union
 //  Union lets us take 2 arrays, and create a new array that only has 1 entry for
@@ -326,8 +326,8 @@ const breeFriendsEmails = [
   "dave@gmail.com"
 ];
 
-const listToSendEmailsTo = _.intersection(A = [6, 3, 8, 4], B = [1, 2, 3, 4], C = _.intersection(A, B)); // Put lodash here to make list of the union of the two address.
-C = [3, 4];
+const listToSendEmailsTo = _.union(bobFriendsEmails, breeFriendsEmails); // Put lodash here to make list of the union of the two address.
+
 // intersection
 //  Intersection lets us take two arrays, and create a new array that only
 //  contains shared elements.
@@ -339,8 +339,7 @@ C = [3, 4];
 // Bob and Bree have decided that instead of inviting everyone they know to their
 // party. They are instead only going to invite those people that they both know.
 
-const listOfSharedEmails = _.groupBy(["betty.white@gmail.com"], ["mr.giggles@gmail.com"], ["mrs.giggles@gmail.com"]); // Use lodash to create the list that are in both lists
-
+const listOfSharedEmails = _.intersection(bobFriendsEmails, breeFriendsEmails);
 // groupBy
 //  Group By lets us take an array of objects, and group then into groups based
 //  on a property.
@@ -403,7 +402,7 @@ const purchases = [
   { month: "February", price: 23.65 }
 ];
 
-const purchasesByMonth = 0; // Use groupBy to group the purchases by the month that they were made.
+const purchasesByMonth = _.groupBy(purchases, "month"); // Use groupBy to group the purchases by the month that they were made.
 
 // Bonus Points
 const totalByMonth = 0; // Use the grouped purchasesByMonth and reduce to create a totalByMonth object.
